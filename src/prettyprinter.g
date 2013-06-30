@@ -1,3 +1,5 @@
+import src.IndentedDiv
+
 grammar prettyprinter;
 
 options {
@@ -9,12 +11,16 @@ options {
 
 /* *********** PRODUCCIONES *********** */
 
-S 
-  : TK_HTML H TK_C_HTML;
+eval returns [string value]
+    :    expr=S {$value = $expr.value;};
+
+S returns [string value]
+  : TK_HTML H TK_C_HTML {};
 H 
-  : HEAD BODY 
-  | HEAD 
+  : 
   | BODY 
+  | HEAD BODY 
+  | HEAD 
   | ; /*LAMBDA*/
 
 HEAD
