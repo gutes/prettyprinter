@@ -1,5 +1,3 @@
-import src.IndentedDiv
-
 grammar prettyprinter;
 
 options {
@@ -60,23 +58,21 @@ B
 
 
 /* *********** TOKENS *********** */
-tokens{
-  TK_HTML : "<html>",
-  TK_C_HTML : "</html>",
-  TK_HEAD : "<head>",
-  TK_C_HEAD : "</head>",
-  TK_TITLE : "<title>",
-  TK_C_TITLE : "</title>",
-  TK_SCRIPT : "<script>",
-  TK_C_SCRIPT : "</script>",
-  TK_BODY : "<body>",
-  TK_C_BODY : "</body>",
-  TK_H1 : "<h1>",
-  TK_C_H1 : "</h1>",
-  TK_DIV : "<div>",
-  TK_C_DIV : "</div>",
-  TK_P : "<p>",
-  TK_C_P : "</p>",
-  TK_BR : "<br/>",
+  TK_HTML : '<html>';
+  TK_C_HTML : '</html>';
+  TK_HEAD : '<head>';
+  TK_C_HEAD : '</head>';
+  TK_TITLE : '<title>';
+  TK_C_TITLE : '</title>';
+  TK_SCRIPT : '<script>';
+  TK_C_SCRIPT : '</script>';
+  TK_BODY : '<body>';
+  TK_C_BODY : '</body>';
+  TK_H1 : '<h1>';
+  TK_C_H1 : '</h1>';
+  TK_DIV : '<div>';
+  TK_C_DIV : '</div>';
+  TK_P : '<p>';
+  TK_C_P : '</p>';
+  TK_BR : '<br/>';
   TK_TEXTO: ('a'..'z'|'A'..'Z'|' ')+
-}
