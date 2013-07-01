@@ -11,11 +11,9 @@ options {
 
 /* *********** PRODUCCIONES *********** */
 
-eval returns [string value]
-    :    expr=S {$value = $expr.value;};
 
-S returns [string value]
-  : TK_HTML H TK_C_HTML {};
+S 
+  : TK_HTML H TK_C_HTML ;
 H 
   : 
   | BODY 
@@ -30,7 +28,7 @@ BODY
   : TK_BODY B TK_C_BODY;
   
 HE
-  : SCS TK_TITLE TK_TEXTO TK_TITLE SCS;
+  : SCS TK_TITLE TK_TEXTO TK_C_TITLE SCS;
 
 SCS
   : SC SCS
