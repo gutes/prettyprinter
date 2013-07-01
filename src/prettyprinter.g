@@ -11,12 +11,15 @@ options {
 
 
 S 
-  : TK_HTML H TK_C_HTML ;
+  : TK_HTML H TK_C_HTML;
 H 
   : 
   | BODY 
-  | HEAD BODY 
-  | HEAD 
+  | HEAD BODY_1 
+  | ; /*LAMBDA*/
+
+BODY_1
+  : BODY
   | ; /*LAMBDA*/
 
 HEAD
