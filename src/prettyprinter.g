@@ -7,48 +7,42 @@ options {
     output = AST;
 }
 
-/* *********** PRODUCCIONES *********** */
 
+/* *********** PRODUCCIONES *********** */
 
 s 
   : TK_HTML h TK_C_HTML;
   
 h 
-  : bODY 
-  | hEAD bODY_1 
-  | ; /*LAMBDA*/ 
+  : (head)? (body)?;
 
-bODY_1
-  : bODY
-  | ; /*LAMBDA*/
+head
+  : TK_HEAD he TK_C_HEAD;
 
-hEAD
-  : TK_HEAD hE TK_C_HEAD;
-
-bODY
+body
   : TK_BODY b TK_C_BODY;
   
-hE
-  : sCS TK_TITLE TK_TEXTO TK_C_TITLE sCS;
+he
+  : scs TK_TITLE TK_TEXTO TK_C_TITLE scs;
 
-sCS
-  : sC sCS
+scs
+  : sc scs
   | ; /*LAMBDA*/
 
-sC
-  : TK_SCRIPT tSC TK_C_SCRIPT;
+sc
+  : TK_SCRIPT tsc TK_C_SCRIPT;
 
-tSC
-  : TK_HTML tSC | TK_C_HTML tSC 
-  | TK_HEAD tSC | TK_C_HEAD tSC 
-  | TK_BODY tSC | TK_C_BODY tSC 
-  | TK_TITLE tSC | TK_C_TITLE tSC
-  | TK_DIV tSC | TK_C_DIV tSC 
-  | TK_H1 tSC | TK_C_H1 tSC 
-  | TK_P tSC | TK_C_P tSC 
-  | TK_SCRIPT tSC 
-  | TK_BR tSC 
-  | TK_TEXTO tSC 
+tsc
+  : TK_HTML tsc | TK_C_HTML tsc 
+  | TK_HEAD tsc | TK_C_HEAD tsc 
+  | TK_BODY tsc | TK_C_BODY tsc 
+  | TK_TITLE tsc | TK_C_TITLE tsc
+  | TK_DIV tsc | TK_C_DIV tsc 
+  | TK_H1 tsc | TK_C_H1 tsc 
+  | TK_P tsc | TK_C_P tsc 
+  | TK_SCRIPT tsc 
+  | TK_BR tsc 
+  | TK_TEXTO tsc 
   | ; /*LAMBDA*/
 
 b
@@ -58,9 +52,12 @@ b
   | TK_P b TK_C_P b 
   | TK_BR b 
   | ; 
-
-
+  
+  
 /* *********** TOKENS *********** */
+
+  WS :  (' ' | '\t' | '\r' | '\n')+ {$channel=HIDDEN;};     //para ignorar los blancos
+  COMM : '<!' .* '>' {$channel=HIDDEN;};                    //para ignorar comentarios
   TK_HTML : '<html>';
   TK_C_HTML : '</html>';
   TK_HEAD : '<head>';
@@ -78,7 +75,20 @@ b
   TK_P : '<p>';
   TK_C_P : '</p>';
   TK_BR : '<br/>';
-  TK_TEXTO : ('a'..'z'|'A'..'Z'|' ')+ ;
+  TK_TEXTO : (~('<'))+;                                     //todo menos < 
+  //TK_TEXTO : ('a'..'z'|'A'..'Z'|'0'..'9'|' ')+;
   
-//  <html><head><title>loco</title></head></html>
-  
+/*
+<html>
+    <head>
+      <title>loco</title>
+    <script>asdasd asd</script>
+    </head>
+
+    <body>
+        <div>hola</div>
+    </body>    
+
+    <!--Esto es un comentario. asd!"·"!·$$·"!$  -->
+</html>
+*/
