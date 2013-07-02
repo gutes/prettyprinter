@@ -6,3 +6,5 @@
 bin/prettyprinter.g
 
 *.class
+
+desktop.ini

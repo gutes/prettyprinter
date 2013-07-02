@@ -10,53 +10,53 @@ options {
 /* *********** PRODUCCIONES *********** */
 
 
-S 
-  : TK_HTML H TK_C_HTML;
-H 
-  : 
-  | BODY 
-  | HEAD BODY_1 
-  | ; /*LAMBDA*/
-
-BODY_1
-  : BODY
-  | ; /*LAMBDA*/
-
-HEAD
-  : TK_HEAD HE TK_C_HEAD;
-
-BODY
-  : TK_BODY B TK_C_BODY;
+s 
+  : TK_HTML h TK_C_HTML;
   
-HE
-  : SCS TK_TITLE TK_TEXTO TK_C_TITLE SCS;
+h 
+  : bODY 
+  | hEAD bODY_1 
+  | ; /*LAMBDA*/ 
 
-SCS
-  : SC SCS
+bODY_1
+  : bODY
   | ; /*LAMBDA*/
 
-SC
-  : TK_SCRIPT TSC TK_C_SCRIPT;
+hEAD
+  : TK_HEAD hE TK_C_HEAD;
 
-TSC
-  : TK_HTML TSC | TK_C_HTML TSC 
-  | TK_HEAD TSC | TK_C_HEAD TSC 
-  | TK_BODY TSC | TK_C_BODY TSC 
-  | TK_TITLE TSC | TK_C_TITLE TSC
-  | TK_DIV TSC | TK_C_DIV TSC 
-  | TK_H1 TSC | TK_C_H1 TSC 
-  | TK_P TSC | TK_C_P TSC 
-  | TK_SCRIPT TSC 
-  | TK_BR TSC 
-  | TK_TEXTO TSC 
+bODY
+  : TK_BODY b TK_C_BODY;
+  
+hE
+  : sCS TK_TITLE TK_TEXTO TK_C_TITLE sCS;
+
+sCS
+  : sC sCS
   | ; /*LAMBDA*/
 
-B
-  : TK_TEXTO B
-  | TK_DIV B TK_C_DIV B 
-  | TK_H1 B TK_C_H1 B 
-  | TK_P B TK_C_P B 
-  | TK_BR B 
+sC
+  : TK_SCRIPT tSC TK_C_SCRIPT;
+
+tSC
+  : TK_HTML tSC | TK_C_HTML tSC 
+  | TK_HEAD tSC | TK_C_HEAD tSC 
+  | TK_BODY tSC | TK_C_BODY tSC 
+  | TK_TITLE tSC | TK_C_TITLE tSC
+  | TK_DIV tSC | TK_C_DIV tSC 
+  | TK_H1 tSC | TK_C_H1 tSC 
+  | TK_P tSC | TK_C_P tSC 
+  | TK_SCRIPT tSC 
+  | TK_BR tSC 
+  | TK_TEXTO tSC 
+  | ; /*LAMBDA*/
+
+b
+  : TK_TEXTO b
+  | TK_DIV b TK_C_DIV b
+  | TK_H1 b TK_C_H1 b 
+  | TK_P b TK_C_P b 
+  | TK_BR b 
   | ; 
 
 
@@ -78,4 +78,7 @@ B
   TK_P : '<p>';
   TK_C_P : '</p>';
   TK_BR : '<br/>';
-  TK_TEXTO: ('a'..'z'|'A'..'Z'|' ')+
+  TK_TEXTO : ('a'..'z'|'A'..'Z'|' ')+ ;
+  
+//  <html><head><title>loco</title></head></html>
+  
