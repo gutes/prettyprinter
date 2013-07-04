@@ -3,7 +3,7 @@
 
 .project
 
-bin/prettyprinter.g
+bin
 
 *.class
 
