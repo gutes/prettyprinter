@@ -1,4 +1,4 @@
-// $ANTLR 3.5 C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g 2013-07-03 22:22:39
+// $ANTLR 3.5 C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g 2013-07-05 20:37:35
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -74,7 +74,7 @@ public class prettyprinterParser extends Parser {
 
 
 	// $ANTLR start "s"
-	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:17:1: s returns [String texto] : t1= TK_HTML h1= h t2= TK_C_HTML ;
+	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:16:1: s returns [String texto] : t1= TK_HTML h1= h t2= TK_C_HTML ;
 	public final prettyprinterParser.s_return s() throws RecognitionException {
 		prettyprinterParser.s_return retval = new prettyprinterParser.s_return();
 		retval.start = input.LT(1);
@@ -89,23 +89,23 @@ public class prettyprinterParser extends Parser {
 		Object t2_tree=null;
 
 		try {
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:18:3: (t1= TK_HTML h1= h t2= TK_C_HTML )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:18:5: t1= TK_HTML h1= h t2= TK_C_HTML
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:17:3: (t1= TK_HTML h1= h t2= TK_C_HTML )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:17:5: t1= TK_HTML h1= h t2= TK_C_HTML
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			t1=(Token)match(input,TK_HTML,FOLLOW_TK_HTML_in_s55); 
+			t1=(Token)match(input,TK_HTML,FOLLOW_TK_HTML_in_s54); 
 			t1_tree = (Object)adaptor.create(t1);
 			adaptor.addChild(root_0, t1_tree);
 
-			pushFollow(FOLLOW_h_in_s59);
+			pushFollow(FOLLOW_h_in_s58);
 			h1=h();
 			state._fsp--;
 
 			adaptor.addChild(root_0, h1.getTree());
 
-			t2=(Token)match(input,TK_C_HTML,FOLLOW_TK_C_HTML_in_s63); 
+			t2=(Token)match(input,TK_C_HTML,FOLLOW_TK_C_HTML_in_s62); 
 			t2_tree = (Object)adaptor.create(t2);
 			adaptor.addChild(root_0, t2_tree);
 
@@ -121,7 +121,7 @@ public class prettyprinterParser extends Parser {
 			          "span.title {color:red;}" +
 			          "span.script_tag {color:red;}" +
 			          "span.script {color:grey;}" +
-			          "span.h1 {color:yellow;}" +
+			          "span.h1 {color:fuchsia;}" +
 			          "span.div {color:green;}" +
 			          "span.br {color:orange;}" +
 			          "</style>" +
@@ -160,7 +160,7 @@ public class prettyprinterParser extends Parser {
 
 
 	// $ANTLR start "h"
-	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:40:1: h returns [String texto] : (h1= head )? (b1= body )? ;
+	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:39:1: h returns [String texto] : (h1= head )? (b1= body )? ;
 	public final prettyprinterParser.h_return h() throws RecognitionException {
 		prettyprinterParser.h_return retval = new prettyprinterParser.h_return();
 		retval.start = input.LT(1);
@@ -172,14 +172,14 @@ public class prettyprinterParser extends Parser {
 
 
 		try {
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:41:3: ( (h1= head )? (b1= body )? )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:41:5: (h1= head )? (b1= body )?
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:40:3: ( (h1= head )? (b1= body )? )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:40:5: (h1= head )? (b1= body )?
 			{
 			root_0 = (Object)adaptor.nil();
 
 
 			retval.texto = "";
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:42:5: (h1= head )?
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:41:5: (h1= head )?
 			int alt1=2;
 			int LA1_0 = input.LA(1);
 			if ( (LA1_0==TK_HEAD) ) {
@@ -187,9 +187,9 @@ public class prettyprinterParser extends Parser {
 			}
 			switch (alt1) {
 				case 1 :
-					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:42:6: h1= head
+					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:41:6: h1= head
 					{
-					pushFollow(FOLLOW_head_in_h91);
+					pushFollow(FOLLOW_head_in_h90);
 					h1=head();
 					state._fsp--;
 
@@ -201,7 +201,7 @@ public class prettyprinterParser extends Parser {
 
 			}
 
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:43:5: (b1= body )?
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:42:5: (b1= body )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==TK_BODY) ) {
@@ -209,9 +209,9 @@ public class prettyprinterParser extends Parser {
 			}
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:43:6: b1= body
+					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:42:6: b1= body
 					{
-					pushFollow(FOLLOW_body_in_h105);
+					pushFollow(FOLLOW_body_in_h104);
 					b1=body();
 					state._fsp--;
 
@@ -253,7 +253,7 @@ public class prettyprinterParser extends Parser {
 
 
 	// $ANTLR start "head"
-	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:46:1: head returns [String texto] : t1= TK_HEAD h1= he t2= TK_C_HEAD ;
+	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:45:1: head returns [String texto] : t1= TK_HEAD h1= he t2= TK_C_HEAD ;
 	public final prettyprinterParser.head_return head() throws RecognitionException {
 		prettyprinterParser.head_return retval = new prettyprinterParser.head_return();
 		retval.start = input.LT(1);
@@ -268,29 +268,29 @@ public class prettyprinterParser extends Parser {
 		Object t2_tree=null;
 
 		try {
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:47:3: (t1= TK_HEAD h1= he t2= TK_C_HEAD )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:47:5: t1= TK_HEAD h1= he t2= TK_C_HEAD
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:46:3: (t1= TK_HEAD h1= he t2= TK_C_HEAD )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:46:5: t1= TK_HEAD h1= he t2= TK_C_HEAD
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			t1=(Token)match(input,TK_HEAD,FOLLOW_TK_HEAD_in_head128); 
+			t1=(Token)match(input,TK_HEAD,FOLLOW_TK_HEAD_in_head127); 
 			t1_tree = (Object)adaptor.create(t1);
 			adaptor.addChild(root_0, t1_tree);
 
-			pushFollow(FOLLOW_he_in_head132);
+			pushFollow(FOLLOW_he_in_head131);
 			h1=he();
 			state._fsp--;
 
 			adaptor.addChild(root_0, h1.getTree());
 
-			t2=(Token)match(input,TK_C_HEAD,FOLLOW_TK_C_HEAD_in_head136); 
+			t2=(Token)match(input,TK_C_HEAD,FOLLOW_TK_C_HEAD_in_head135); 
 			t2_tree = (Object)adaptor.create(t2);
 			adaptor.addChild(root_0, t2_tree);
 
 
-			      retval.texto = "<div class=\"bloque\">" + t1.getText() + "<div class=\"bloque\">" 
-			      + (h1!=null?((prettyprinterParser.he_return)h1).texto:null) + "</div>" + t2.getText() + "</div>";
+			      retval.texto = "<div class=\"bloque\">" + t1.getText() + (h1!=null?((prettyprinterParser.he_return)h1).texto:null) 
+			      + t2.getText() + "</div>";
 			  
 			}
 
@@ -322,7 +322,7 @@ public class prettyprinterParser extends Parser {
 
 
 	// $ANTLR start "body"
-	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:52:1: body returns [String texto] : t1= TK_BODY b1= b t2= TK_C_BODY ;
+	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:51:1: body returns [String texto] : t1= TK_BODY b1= b t2= TK_C_BODY ;
 	public final prettyprinterParser.body_return body() throws RecognitionException {
 		prettyprinterParser.body_return retval = new prettyprinterParser.body_return();
 		retval.start = input.LT(1);
@@ -337,29 +337,29 @@ public class prettyprinterParser extends Parser {
 		Object t2_tree=null;
 
 		try {
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:53:3: (t1= TK_BODY b1= b t2= TK_C_BODY )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:53:5: t1= TK_BODY b1= b t2= TK_C_BODY
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:52:3: (t1= TK_BODY b1= b t2= TK_C_BODY )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:52:5: t1= TK_BODY b1= b t2= TK_C_BODY
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			t1=(Token)match(input,TK_BODY,FOLLOW_TK_BODY_in_body154); 
+			t1=(Token)match(input,TK_BODY,FOLLOW_TK_BODY_in_body153); 
 			t1_tree = (Object)adaptor.create(t1);
 			adaptor.addChild(root_0, t1_tree);
 
-			pushFollow(FOLLOW_b_in_body158);
+			pushFollow(FOLLOW_b_in_body157);
 			b1=b();
 			state._fsp--;
 
 			adaptor.addChild(root_0, b1.getTree());
 
-			t2=(Token)match(input,TK_C_BODY,FOLLOW_TK_C_BODY_in_body162); 
+			t2=(Token)match(input,TK_C_BODY,FOLLOW_TK_C_BODY_in_body161); 
 			t2_tree = (Object)adaptor.create(t2);
 			adaptor.addChild(root_0, t2_tree);
 
 
-			      retval.texto = "<div class=\"bloque\">" + t1.getText() + "<div class=\"bloque\">" 
-			      + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) + "</div>" + t2.getText() + "</div>";
+			      retval.texto = "<div class=\"bloque\">" + t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) 
+			      + t2.getText() + "</div>";
 			  
 			}
 
@@ -391,7 +391,7 @@ public class prettyprinterParser extends Parser {
 
 
 	// $ANTLR start "he"
-	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:58:1: he returns [String texto] : sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs ;
+	// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:57:1: he returns [String texto] : sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs ;
 	public final prettyprinterParser.he_return he() throws RecognitionException {
 		prettyprinterParser.he_return retval = new prettyprinterParser.he_return();
 		retval.start = input.LT(1);
@@ -409,38 +409,39 @@ public class prettyprinterParser extends Parser {
 		Object t3_tree=null;
 
 		try {
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:59:3: (sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:59:5: sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:58:3: (sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:58:5: sc1= scs t1= TK_TITLE t2= TK_TEXTO t3= TK_C_TITLE scs2= scs
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_scs_in_he182);
+			pushFollow(FOLLOW_scs_in_he181);
 			sc1=scs();
 			state._fsp--;
 
 			adaptor.addChild(root_0, sc1.getTree());
 
-			t1=(Token)match(input,TK_TITLE,FOLLOW_TK_TITLE_in_he186); 
+			t1=(Token)match(input,TK_TITLE,FOLLOW_TK_TITLE_in_he185); 
 			t1_tree = (Object)adaptor.create(t1);
 			adaptor.addChild(root_0, t1_tree);
 
-			t2=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_he190); 
+			t2=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_he189); 
 			t2_tree = (Object)adaptor.create(t2);
 			adaptor.addChild(root_0, t2_tree);
 
-			t3=(Token)match(input,TK_C_TITLE,FOLLOW_TK_C_TITLE_in_he194); 
+			t3=(Token)match(input,TK_C_TITLE,FOLLOW_TK_C_TITLE_in_he193); 
 			t3_tree = (Object)adaptor.create(t3);
 			adaptor.addChild(root_0, t3_tree);
 
-			pushFollow(FOLLOW_scs_in_he198);
+			pushFollow(FOLLOW_scs_in_he197);
 			scs2=scs();
 			state._fsp--;
 
 			adaptor.addChild(root_0, scs2.getTree());
 
 
-			      retval.texto = (sc1!=null?((prettyprinterParser.scs_return)sc1).texto:null) + t1.getText() + t2.getText() + t3.getText() + (scs2!=null?((prettyprinterParser.scs_return)scs2).texto:null);
+			      retval.texto = (sc1!=null?((prettyprinterParser.scs_return)sc1).texto:null) + "<div class=\"bloque\">" + t1.getText() 
+			      + t2.getText() + t3.getText() + "</div>" + (scs2!=null?((prettyprinterParser.scs_return)scs2).texto:null);
 			  
 			}
 
@@ -507,13 +508,13 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_sc_in_scs216);
+					pushFollow(FOLLOW_sc_in_scs215);
 					sc1=sc();
 					state._fsp--;
 
 					adaptor.addChild(root_0, sc1.getTree());
 
-					pushFollow(FOLLOW_scs_in_scs220);
+					pushFollow(FOLLOW_scs_in_scs219);
 					scs1=scs();
 					state._fsp--;
 
@@ -582,23 +583,23 @@ public class prettyprinterParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 
 
-			t1=(Token)match(input,TK_SCRIPT,FOLLOW_TK_SCRIPT_in_sc250); 
+			t1=(Token)match(input,TK_SCRIPT,FOLLOW_TK_SCRIPT_in_sc249); 
 			t1_tree = (Object)adaptor.create(t1);
 			adaptor.addChild(root_0, t1_tree);
 
-			pushFollow(FOLLOW_tsc_in_sc254);
+			pushFollow(FOLLOW_tsc_in_sc253);
 			ts=tsc();
 			state._fsp--;
 
 			adaptor.addChild(root_0, ts.getTree());
 
-			t2=(Token)match(input,TK_C_SCRIPT,FOLLOW_TK_C_SCRIPT_in_sc258); 
+			t2=(Token)match(input,TK_C_SCRIPT,FOLLOW_TK_C_SCRIPT_in_sc257); 
 			t2_tree = (Object)adaptor.create(t2);
 			adaptor.addChild(root_0, t2_tree);
 
 
-			      retval.texto = "<br>" + t1.getText() + "<div class=\"bloque\">" 
-			      + "<span class=\"script\">" + (ts!=null?((prettyprinterParser.tsc_return)ts).texto:null) + "</span>" + "</div>" + t2.getText();
+			      retval.texto = "<div class=\"bloque\">" + t1.getText() + "<div class=\"bloque\">"
+			      + "<span class=\"script\">" + (ts!=null?((prettyprinterParser.tsc_return)ts).texto:null) + "</span>" + "</div>" + t2.getText() + "</div>";
 			  
 			}
 
@@ -763,11 +764,11 @@ public class prettyprinterParser extends Parser {
 						case 1 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:76:7: tk= TK_HTML ts= tsc
 							{
-							tk=(Token)match(input,TK_HTML,FOLLOW_TK_HTML_in_tsc286); 
+							tk=(Token)match(input,TK_HTML,FOLLOW_TK_HTML_in_tsc285); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc290);
+							pushFollow(FOLLOW_tsc_in_tsc289);
 							ts=tsc();
 							state._fsp--;
 
@@ -778,11 +779,11 @@ public class prettyprinterParser extends Parser {
 						case 2 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:76:27: tk= TK_C_HTML ts= tsc
 							{
-							tk=(Token)match(input,TK_C_HTML,FOLLOW_TK_C_HTML_in_tsc296); 
+							tk=(Token)match(input,TK_C_HTML,FOLLOW_TK_C_HTML_in_tsc295); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc300);
+							pushFollow(FOLLOW_tsc_in_tsc299);
 							ts=tsc();
 							state._fsp--;
 
@@ -793,11 +794,11 @@ public class prettyprinterParser extends Parser {
 						case 3 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:77:7: tk= TK_HEAD ts= tsc
 							{
-							tk=(Token)match(input,TK_HEAD,FOLLOW_TK_HEAD_in_tsc312); 
+							tk=(Token)match(input,TK_HEAD,FOLLOW_TK_HEAD_in_tsc309); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc316);
+							pushFollow(FOLLOW_tsc_in_tsc313);
 							ts=tsc();
 							state._fsp--;
 
@@ -808,11 +809,11 @@ public class prettyprinterParser extends Parser {
 						case 4 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:77:27: tk= TK_C_HEAD ts= tsc
 							{
-							tk=(Token)match(input,TK_C_HEAD,FOLLOW_TK_C_HEAD_in_tsc322); 
+							tk=(Token)match(input,TK_C_HEAD,FOLLOW_TK_C_HEAD_in_tsc319); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc326);
+							pushFollow(FOLLOW_tsc_in_tsc323);
 							ts=tsc();
 							state._fsp--;
 
@@ -823,11 +824,11 @@ public class prettyprinterParser extends Parser {
 						case 5 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:78:7: tk= TK_BODY ts= tsc
 							{
-							tk=(Token)match(input,TK_BODY,FOLLOW_TK_BODY_in_tsc338); 
+							tk=(Token)match(input,TK_BODY,FOLLOW_TK_BODY_in_tsc333); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc342);
+							pushFollow(FOLLOW_tsc_in_tsc337);
 							ts=tsc();
 							state._fsp--;
 
@@ -838,11 +839,11 @@ public class prettyprinterParser extends Parser {
 						case 6 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:78:27: tk= TK_C_BODY ts= tsc
 							{
-							tk=(Token)match(input,TK_C_BODY,FOLLOW_TK_C_BODY_in_tsc348); 
+							tk=(Token)match(input,TK_C_BODY,FOLLOW_TK_C_BODY_in_tsc343); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc352);
+							pushFollow(FOLLOW_tsc_in_tsc347);
 							ts=tsc();
 							state._fsp--;
 
@@ -853,11 +854,11 @@ public class prettyprinterParser extends Parser {
 						case 7 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:79:7: tk= TK_TITLE ts= tsc
 							{
-							tk=(Token)match(input,TK_TITLE,FOLLOW_TK_TITLE_in_tsc364); 
+							tk=(Token)match(input,TK_TITLE,FOLLOW_TK_TITLE_in_tsc357); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc368);
+							pushFollow(FOLLOW_tsc_in_tsc361);
 							ts=tsc();
 							state._fsp--;
 
@@ -868,11 +869,11 @@ public class prettyprinterParser extends Parser {
 						case 8 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:79:28: tk= TK_C_TITLE ts= tsc
 							{
-							tk=(Token)match(input,TK_C_TITLE,FOLLOW_TK_C_TITLE_in_tsc374); 
+							tk=(Token)match(input,TK_C_TITLE,FOLLOW_TK_C_TITLE_in_tsc367); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc378);
+							pushFollow(FOLLOW_tsc_in_tsc371);
 							ts=tsc();
 							state._fsp--;
 
@@ -883,11 +884,11 @@ public class prettyprinterParser extends Parser {
 						case 9 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:80:7: tk= TK_DIV ts= tsc
 							{
-							tk=(Token)match(input,TK_DIV,FOLLOW_TK_DIV_in_tsc392); 
+							tk=(Token)match(input,TK_DIV,FOLLOW_TK_DIV_in_tsc381); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc396);
+							pushFollow(FOLLOW_tsc_in_tsc385);
 							ts=tsc();
 							state._fsp--;
 
@@ -898,11 +899,11 @@ public class prettyprinterParser extends Parser {
 						case 10 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:80:26: tk= TK_C_DIV ts= tsc
 							{
-							tk=(Token)match(input,TK_C_DIV,FOLLOW_TK_C_DIV_in_tsc402); 
+							tk=(Token)match(input,TK_C_DIV,FOLLOW_TK_C_DIV_in_tsc391); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc406);
+							pushFollow(FOLLOW_tsc_in_tsc395);
 							ts=tsc();
 							state._fsp--;
 
@@ -913,11 +914,11 @@ public class prettyprinterParser extends Parser {
 						case 11 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:81:7: tk= TK_H1 ts= tsc
 							{
-							tk=(Token)match(input,TK_H1,FOLLOW_TK_H1_in_tsc419); 
+							tk=(Token)match(input,TK_H1,FOLLOW_TK_H1_in_tsc408); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc423);
+							pushFollow(FOLLOW_tsc_in_tsc412);
 							ts=tsc();
 							state._fsp--;
 
@@ -928,11 +929,11 @@ public class prettyprinterParser extends Parser {
 						case 12 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:81:25: tk= TK_C_H1 ts= tsc
 							{
-							tk=(Token)match(input,TK_C_H1,FOLLOW_TK_C_H1_in_tsc429); 
+							tk=(Token)match(input,TK_C_H1,FOLLOW_TK_C_H1_in_tsc418); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc433);
+							pushFollow(FOLLOW_tsc_in_tsc422);
 							ts=tsc();
 							state._fsp--;
 
@@ -943,11 +944,11 @@ public class prettyprinterParser extends Parser {
 						case 13 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:82:7: tk= TK_P ts= tsc
 							{
-							tk=(Token)match(input,TK_P,FOLLOW_TK_P_in_tsc447); 
+							tk=(Token)match(input,TK_P,FOLLOW_TK_P_in_tsc436); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc451);
+							pushFollow(FOLLOW_tsc_in_tsc440);
 							ts=tsc();
 							state._fsp--;
 
@@ -958,11 +959,11 @@ public class prettyprinterParser extends Parser {
 						case 14 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:82:24: tk= TK_C_P ts= tsc
 							{
-							tk=(Token)match(input,TK_C_P,FOLLOW_TK_C_P_in_tsc457); 
+							tk=(Token)match(input,TK_C_P,FOLLOW_TK_C_P_in_tsc446); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc461);
+							pushFollow(FOLLOW_tsc_in_tsc450);
 							ts=tsc();
 							state._fsp--;
 
@@ -973,11 +974,11 @@ public class prettyprinterParser extends Parser {
 						case 15 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:83:7: tk= TK_SCRIPT ts= tsc
 							{
-							tk=(Token)match(input,TK_SCRIPT,FOLLOW_TK_SCRIPT_in_tsc476); 
+							tk=(Token)match(input,TK_SCRIPT,FOLLOW_TK_SCRIPT_in_tsc460); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc480);
+							pushFollow(FOLLOW_tsc_in_tsc464);
 							ts=tsc();
 							state._fsp--;
 
@@ -988,11 +989,11 @@ public class prettyprinterParser extends Parser {
 						case 16 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:84:7: tk= TK_BR ts= tsc
 							{
-							tk=(Token)match(input,TK_BR,FOLLOW_TK_BR_in_tsc492); 
+							tk=(Token)match(input,TK_BR,FOLLOW_TK_BR_in_tsc474); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc496);
+							pushFollow(FOLLOW_tsc_in_tsc478);
 							ts=tsc();
 							state._fsp--;
 
@@ -1003,11 +1004,11 @@ public class prettyprinterParser extends Parser {
 						case 17 :
 							// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:85:7: tk= TK_TEXTO ts= tsc
 							{
-							tk=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_tsc508); 
+							tk=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_tsc488); 
 							tk_tree = (Object)adaptor.create(tk);
 							adaptor.addChild(root_0, tk_tree);
 
-							pushFollow(FOLLOW_tsc_in_tsc512);
+							pushFollow(FOLLOW_tsc_in_tsc492);
 							ts=tsc();
 							state._fsp--;
 
@@ -1124,18 +1125,18 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					t1=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_b546); 
+					t1=(Token)match(input,TK_TEXTO,FOLLOW_TK_TEXTO_in_b527); 
 					t1_tree = (Object)adaptor.create(t1);
 					adaptor.addChild(root_0, t1_tree);
 
-					pushFollow(FOLLOW_b_in_b550);
+					pushFollow(FOLLOW_b_in_b531);
 					b1=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b1.getTree());
 
 
-					        retval.texto = t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null);
+					        retval.texto = "<div class=\"bloque\">" + t1.getText()  + "</div>" + (b1!=null?((prettyprinterParser.b_return)b1).texto:null);
 					    
 					}
 					break;
@@ -1145,29 +1146,29 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					t1=(Token)match(input,TK_DIV,FOLLOW_TK_DIV_in_b575); 
+					t1=(Token)match(input,TK_DIV,FOLLOW_TK_DIV_in_b541); 
 					t1_tree = (Object)adaptor.create(t1);
 					adaptor.addChild(root_0, t1_tree);
 
-					pushFollow(FOLLOW_b_in_b579);
+					pushFollow(FOLLOW_b_in_b545);
 					b1=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b1.getTree());
 
-					t2=(Token)match(input,TK_C_DIV,FOLLOW_TK_C_DIV_in_b583); 
+					t2=(Token)match(input,TK_C_DIV,FOLLOW_TK_C_DIV_in_b549); 
 					t2_tree = (Object)adaptor.create(t2);
 					adaptor.addChild(root_0, t2_tree);
 
-					pushFollow(FOLLOW_b_in_b587);
+					pushFollow(FOLLOW_b_in_b553);
 					b2=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b2.getTree());
 
 
-					        retval.texto = "<br>" + t1.getText() + "<div class=\"bloque\">" 
-					        + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) + "</div>" + t2.getText() + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
+					        retval.texto = "<div class=\"bloque\">" + t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) 
+					        + t2.getText() + "</div>" + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
 					    
 					}
 					break;
@@ -1177,29 +1178,29 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					t1=(Token)match(input,TK_H1,FOLLOW_TK_H1_in_b597); 
+					t1=(Token)match(input,TK_H1,FOLLOW_TK_H1_in_b563); 
 					t1_tree = (Object)adaptor.create(t1);
 					adaptor.addChild(root_0, t1_tree);
 
-					pushFollow(FOLLOW_b_in_b601);
+					pushFollow(FOLLOW_b_in_b567);
 					b1=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b1.getTree());
 
-					t2=(Token)match(input,TK_C_H1,FOLLOW_TK_C_H1_in_b605); 
+					t2=(Token)match(input,TK_C_H1,FOLLOW_TK_C_H1_in_b571); 
 					t2_tree = (Object)adaptor.create(t2);
 					adaptor.addChild(root_0, t2_tree);
 
-					pushFollow(FOLLOW_b_in_b609);
+					pushFollow(FOLLOW_b_in_b575);
 					b2=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b2.getTree());
 
 
-					        retval.texto = "<br>" + t1.getText() + "<div class=\"bloque\">" 
-					        + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) + "</div>" + t2.getText() + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
+					        retval.texto = "<div class=\"bloque\">" + t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) 
+					        + t2.getText() + "</div>" + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
 					    
 					}
 					break;
@@ -1209,29 +1210,29 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					t1=(Token)match(input,TK_P,FOLLOW_TK_P_in_b619); 
+					t1=(Token)match(input,TK_P,FOLLOW_TK_P_in_b585); 
 					t1_tree = (Object)adaptor.create(t1);
 					adaptor.addChild(root_0, t1_tree);
 
-					pushFollow(FOLLOW_b_in_b623);
+					pushFollow(FOLLOW_b_in_b589);
 					b1=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b1.getTree());
 
-					t2=(Token)match(input,TK_C_P,FOLLOW_TK_C_P_in_b627); 
+					t2=(Token)match(input,TK_C_P,FOLLOW_TK_C_P_in_b593); 
 					t2_tree = (Object)adaptor.create(t2);
 					adaptor.addChild(root_0, t2_tree);
 
-					pushFollow(FOLLOW_b_in_b631);
+					pushFollow(FOLLOW_b_in_b597);
 					b2=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b2.getTree());
 
 
-					        retval.texto = "<br>" + t1.getText() + "<div class=\"bloque\">" 
-					        + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) + "</div>" + t2.getText() + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
+					        retval.texto = "<div class=\"bloque\">" + t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null) 
+					        + t2.getText() + "</div>" + (b2!=null?((prettyprinterParser.b_return)b2).texto:null);
 					    
 					}
 					break;
@@ -1241,18 +1242,18 @@ public class prettyprinterParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 
 
-					t1=(Token)match(input,TK_BR,FOLLOW_TK_BR_in_b641); 
+					t1=(Token)match(input,TK_BR,FOLLOW_TK_BR_in_b607); 
 					t1_tree = (Object)adaptor.create(t1);
 					adaptor.addChild(root_0, t1_tree);
 
-					pushFollow(FOLLOW_b_in_b645);
+					pushFollow(FOLLOW_b_in_b611);
 					b1=b();
 					state._fsp--;
 
 					adaptor.addChild(root_0, b1.getTree());
 
 
-					        retval.texto = "<br>" + t1.getText() + (b1!=null?((prettyprinterParser.b_return)b1).texto:null);
+					        retval.texto = "<div class=\"bloque\">" + t1.getText()  + "</div>" + (b1!=null?((prettyprinterParser.b_return)b1).texto:null);
 					    
 					}
 					break;
@@ -1291,75 +1292,75 @@ public class prettyprinterParser extends Parser {
 
 
 
-	public static final BitSet FOLLOW_TK_HTML_in_s55 = new BitSet(new long[]{0x0000000000020820L});
-	public static final BitSet FOLLOW_h_in_s59 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_TK_C_HTML_in_s63 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_head_in_h91 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_body_in_h105 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_HEAD_in_head128 = new BitSet(new long[]{0x0000000000500000L});
-	public static final BitSet FOLLOW_he_in_head132 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_TK_C_HEAD_in_head136 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_BODY_in_body154 = new BitSet(new long[]{0x00000000002980C0L});
-	public static final BitSet FOLLOW_b_in_body158 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_TK_C_BODY_in_body162 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_scs_in_he182 = new BitSet(new long[]{0x0000000000400000L});
-	public static final BitSet FOLLOW_TK_TITLE_in_he186 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_TK_TEXTO_in_he190 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_TK_C_TITLE_in_he194 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_scs_in_he198 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_sc_in_scs216 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_scs_in_scs220 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_SCRIPT_in_sc250 = new BitSet(new long[]{0x00000000007FFFE0L});
-	public static final BitSet FOLLOW_tsc_in_sc254 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_TK_C_SCRIPT_in_sc258 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_HTML_in_tsc286 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc290 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_HTML_in_tsc296 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc300 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_HEAD_in_tsc312 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc316 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_HEAD_in_tsc322 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc326 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_BODY_in_tsc338 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc342 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_BODY_in_tsc348 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc352 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_TITLE_in_tsc364 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc368 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_TITLE_in_tsc374 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc378 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_DIV_in_tsc392 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc396 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_DIV_in_tsc402 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc406 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_H1_in_tsc419 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc423 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_H1_in_tsc429 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc433 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_P_in_tsc447 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc451 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_C_P_in_tsc457 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc461 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_SCRIPT_in_tsc476 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc480 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_BR_in_tsc492 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc496 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_TEXTO_in_tsc508 = new BitSet(new long[]{0x00000000007FDFE0L});
-	public static final BitSet FOLLOW_tsc_in_tsc512 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_TEXTO_in_b546 = new BitSet(new long[]{0x0000000000298040L});
-	public static final BitSet FOLLOW_b_in_b550 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_DIV_in_b575 = new BitSet(new long[]{0x0000000000298140L});
-	public static final BitSet FOLLOW_b_in_b579 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_TK_C_DIV_in_b583 = new BitSet(new long[]{0x0000000000298040L});
-	public static final BitSet FOLLOW_b_in_b587 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_H1_in_b597 = new BitSet(new long[]{0x0000000000298240L});
-	public static final BitSet FOLLOW_b_in_b601 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_TK_C_H1_in_b605 = new BitSet(new long[]{0x0000000000298040L});
-	public static final BitSet FOLLOW_b_in_b609 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_P_in_b619 = new BitSet(new long[]{0x0000000000299040L});
-	public static final BitSet FOLLOW_b_in_b623 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_TK_C_P_in_b627 = new BitSet(new long[]{0x0000000000298040L});
-	public static final BitSet FOLLOW_b_in_b631 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TK_BR_in_b641 = new BitSet(new long[]{0x0000000000298040L});
-	public static final BitSet FOLLOW_b_in_b645 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_HTML_in_s54 = new BitSet(new long[]{0x0000000000020820L});
+	public static final BitSet FOLLOW_h_in_s58 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_TK_C_HTML_in_s62 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_head_in_h90 = new BitSet(new long[]{0x0000000000000022L});
+	public static final BitSet FOLLOW_body_in_h104 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_HEAD_in_head127 = new BitSet(new long[]{0x0000000000500000L});
+	public static final BitSet FOLLOW_he_in_head131 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_TK_C_HEAD_in_head135 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_BODY_in_body153 = new BitSet(new long[]{0x00000000002980C0L});
+	public static final BitSet FOLLOW_b_in_body157 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_TK_C_BODY_in_body161 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_scs_in_he181 = new BitSet(new long[]{0x0000000000400000L});
+	public static final BitSet FOLLOW_TK_TITLE_in_he185 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_TK_TEXTO_in_he189 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_TK_C_TITLE_in_he193 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_scs_in_he197 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_sc_in_scs215 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_scs_in_scs219 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_SCRIPT_in_sc249 = new BitSet(new long[]{0x00000000007FFFE0L});
+	public static final BitSet FOLLOW_tsc_in_sc253 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_TK_C_SCRIPT_in_sc257 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_HTML_in_tsc285 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc289 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_HTML_in_tsc295 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc299 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_HEAD_in_tsc309 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc313 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_HEAD_in_tsc319 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc323 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_BODY_in_tsc333 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc337 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_BODY_in_tsc343 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc347 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_TITLE_in_tsc357 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc361 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_TITLE_in_tsc367 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc371 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_DIV_in_tsc381 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc385 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_DIV_in_tsc391 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc395 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_H1_in_tsc408 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc412 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_H1_in_tsc418 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc422 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_P_in_tsc436 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc440 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_C_P_in_tsc446 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc450 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_SCRIPT_in_tsc460 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc464 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_BR_in_tsc474 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc478 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_TEXTO_in_tsc488 = new BitSet(new long[]{0x00000000007FDFE0L});
+	public static final BitSet FOLLOW_tsc_in_tsc492 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_TEXTO_in_b527 = new BitSet(new long[]{0x0000000000298040L});
+	public static final BitSet FOLLOW_b_in_b531 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_DIV_in_b541 = new BitSet(new long[]{0x0000000000298140L});
+	public static final BitSet FOLLOW_b_in_b545 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_TK_C_DIV_in_b549 = new BitSet(new long[]{0x0000000000298040L});
+	public static final BitSet FOLLOW_b_in_b553 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_H1_in_b563 = new BitSet(new long[]{0x0000000000298240L});
+	public static final BitSet FOLLOW_b_in_b567 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_TK_C_H1_in_b571 = new BitSet(new long[]{0x0000000000298040L});
+	public static final BitSet FOLLOW_b_in_b575 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_P_in_b585 = new BitSet(new long[]{0x0000000000299040L});
+	public static final BitSet FOLLOW_b_in_b589 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_TK_C_P_in_b593 = new BitSet(new long[]{0x0000000000298040L});
+	public static final BitSet FOLLOW_b_in_b597 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TK_BR_in_b607 = new BitSet(new long[]{0x0000000000298040L});
+	public static final BitSet FOLLOW_b_in_b611 = new BitSet(new long[]{0x0000000000000002L});
 }

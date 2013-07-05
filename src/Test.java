@@ -1,18 +1,22 @@
-import org.antlr.runtime.*;
-import static java.lang.System.out;
+import org.antlr.runtime.ANTLRStringStream;
+import org.antlr.runtime.CommonTokenStream;
 
 public class Test {	
-	 public static void main(String[] args) throws Exception {
-		 	String html1 = 
-		 		"<html>  <head><title>este es el título</title><script>print(hola)</script></head><body>" + 
-		 		"Esto es <p> una <h1> prueba </h1> </p> <br>" +
-		 		"</body></html>"
-		 	;
+	public static void main(String[] args) throws Exception {
+		String html1 = 
+			"<html>  <head> <title>Título</title> <script>print(\"hello\")</script>\n" +
+			"</head><body>\n" +
+			"texto<p>párrafo <h1><!-- comentario--><p> más texto</p></h1></p>\n" +
+			"<div>texto texto texto <br> mas texto texto      texto</div>\n" +
+			"\n" +
+			"</body>\n" +
+			"</html>\n"
+		;
 		 
-	        ANTLRStringStream in = new ANTLRStringStream(html1);
-	        prettyprinterLexer lexer = new prettyprinterLexer(in);
-	        CommonTokenStream tokens = new CommonTokenStream(lexer);
-	        prettyprinterParser parser = new prettyprinterParser(tokens);
-	        out.println(parser.s().texto);
-	    }
+		ANTLRStringStream in = new ANTLRStringStream(html1);
+		prettyprinterLexer lexer = new prettyprinterLexer(in);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		prettyprinterParser parser = new prettyprinterParser(tokens);
+		System.out.println(parser.s().texto);
+	}
 }

@@ -12,7 +12,6 @@ options {
 //  TODO no acepta el signo < en los scripts, excepto que sean tags  
 //    (ejemplo: if (x < 5) en un script no parsea) porque TK_TEXTO es todo menos '<' 
 //  TODO pinta los tags en scripts y no debería (porque los span están en los tokens; se podría corregir)
-//  TODO revisar que cosas indentar
 
 s returns [String texto]
   : t1=TK_HTML h1=h t2=TK_C_HTML {
@@ -27,7 +26,7 @@ s returns [String texto]
           "span.title {color:red;}" +
           "span.script_tag {color:red;}" +
           "span.script {color:grey;}" +
-          "span.h1 {color:yellow;}" +
+          "span.h1 {color:fuchsia;}" +
           "span.div {color:green;}" +
           "span.br {color:orange;}" +
           "</style>" +
@@ -45,19 +44,20 @@ h returns [String texto]
 
 head returns [String texto]
   : t1=TK_HEAD h1=he t2=TK_C_HEAD {
-      $texto = "<div class=\"bloque\">" + $t1.getText() + "<div class=\"bloque\">" 
-      + $h1.texto + "</div>" + $t2.getText() + "</div>";
+      $texto = "<div class=\"bloque\">" + $t1.getText() + $h1.texto 
+      + $t2.getText() + "</div>";
   };
 
 body returns [String texto]
   : t1=TK_BODY b1=b t2=TK_C_BODY {
-      $texto = "<div class=\"bloque\">" + $t1.getText() + "<div class=\"bloque\">" 
-      + $b1.texto + "</div>" + $t2.getText() + "</div>";
+      $texto = "<div class=\"bloque\">" + $t1.getText() + $b1.texto 
+      + $t2.getText() + "</div>";
   };
   
 he returns [String texto]
   : sc1=scs t1=TK_TITLE t2=TK_TEXTO t3=TK_C_TITLE scs2=scs {
-      $texto = $sc1.texto + $t1.getText() + $t2.getText() + $t3.getText() + $scs2.texto;
+      $texto = $sc1.texto + "<div class=\"bloque\">" + $t1.getText() 
+      + $t2.getText() + $t3.getText() + "</div>" + $scs2.texto;
   };
 
 scs returns [String texto]
@@ -67,50 +67,50 @@ scs returns [String texto]
 
 sc returns [String texto]
   : t1=TK_SCRIPT ts=tsc t2=TK_C_SCRIPT {
-      $texto = "<br>" + $t1.getText() + "<div class=\"bloque\">" 
-      + "<span class=\"script\">" + $ts.texto + "</span>" + "</div>" + $t2.getText();
+      $texto = "<div class=\"bloque\">" + $t1.getText() + "<div class=\"bloque\">"
+      + "<span class=\"script\">" + $ts.texto + "</span>" + "</div>" + $t2.getText() + "</div>";
   };  
 
 tsc returns [String texto]
   : (
-      tk=TK_HTML ts=tsc | tk=TK_C_HTML ts=tsc  
-    | tk=TK_HEAD ts=tsc | tk=TK_C_HEAD ts=tsc  
-    | tk=TK_BODY ts=tsc | tk=TK_C_BODY ts=tsc  
-    | tk=TK_TITLE ts=tsc | tk=TK_C_TITLE ts=tsc    
+      tk=TK_HTML ts=tsc | tk=TK_C_HTML ts=tsc
+    | tk=TK_HEAD ts=tsc | tk=TK_C_HEAD ts=tsc
+    | tk=TK_BODY ts=tsc | tk=TK_C_BODY ts=tsc
+    | tk=TK_TITLE ts=tsc | tk=TK_C_TITLE ts=tsc
     | tk=TK_DIV ts=tsc | tk=TK_C_DIV ts=tsc   
     | tk=TK_H1 ts=tsc | tk=TK_C_H1 ts=tsc    
-    | tk=TK_P ts=tsc | tk=TK_C_P ts=tsc     
-    | tk=TK_SCRIPT ts=tsc  
-    | tk=TK_BR ts=tsc  
+    | tk=TK_P ts=tsc | tk=TK_C_P ts=tsc
+    | tk=TK_SCRIPT ts=tsc
+    | tk=TK_BR ts=tsc
     | tk=TK_TEXTO ts=tsc
    ) {$texto = $tk.getText() + $ts.texto;}
   | {$texto = "";} //lambda
-  ; 
-
+  ;
+  
 b returns [String texto]
-  : t1=TK_TEXTO b1=b                {
-        $texto = $t1.getText() + $b1.texto;
+  : t1=TK_TEXTO b1=b {
+        $texto = "<div class=\"bloque\">" + $t1.getText()  + "</div>" + $b1.texto;
     }
   | t1=TK_DIV b1=b t2=TK_C_DIV b2=b {
-        $texto = "<br>" + $t1.getText() + "<div class=\"bloque\">" 
-        + $b1.texto + "</div>" + $t2.getText() + $b2.texto;
+        $texto = "<div class=\"bloque\">" + $t1.getText() + $b1.texto 
+        + $t2.getText() + "</div>" + $b2.texto;
     }
   | t1=TK_H1 b1=b t2=TK_C_H1 b2=b {
-        $texto = "<br>" + $t1.getText() + "<div class=\"bloque\">" 
-        + $b1.texto + "</div>" + $t2.getText() + $b2.texto;
+        $texto = "<div class=\"bloque\">" + $t1.getText() + $b1.texto 
+        + $t2.getText() + "</div>" + $b2.texto;
     }
   | t1=TK_P b1=b t2=TK_C_P b2=b {
-        $texto = "<br>" + $t1.getText() + "<div class=\"bloque\">" 
-        + $b1.texto + "</div>" + $t2.getText() + $b2.texto;
+        $texto = "<div class=\"bloque\">" + $t1.getText() + $b1.texto 
+        + $t2.getText() + "</div>" + $b2.texto;
     }
   | t1=TK_BR b1=b {
-        $texto = "<br>" + $t1.getText() + $b1.texto;
+        $texto = "<div class=\"bloque\">" + $t1.getText()  + "</div>" + $b1.texto;
     } 
   | {
         $texto = "";  //lambda
   }; 
   
-  
+
 /* *********** TOKENS *********** */
 
 WS : (' ' | '\t' | '\r' | '\n')+ {
