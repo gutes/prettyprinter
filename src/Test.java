@@ -4,9 +4,9 @@ import org.antlr.runtime.CommonTokenStream;
 public class Test {	
 	public static void main(String[] args) throws Exception {
 		String html1 = 
-			"<html>  <head> <title>Título</title> <script>print(\"hello\")</script>\n" +
+			"<html>  <head> <title>T’tulo</title> <script>print(\"hello\")</script>\n" +
 			"</head><body>\n" +
-			"texto<p>párrafo <h1><!-- comentario--><p> más texto</p></h1></p>\n" +
+			"texto<p>p‡rrafo <h1><!-- comentario--><p> m‡s texto</p></h1></p>\n" +
 			"<div>texto texto texto <br> mas texto texto      texto</div>\n" +
 			"\n" +
 			"</body>\n" +
