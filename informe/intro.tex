@@ -1,0 +1,26 @@
+\section{Primera Parte}
+\subsection{Introducci\'on}
+
+
+\paragraph{} Cuando comenzamos a pensar en cómo encarar el problema del desarrollo de la gramática, pensamos que podríamos tratar cada caracter (letra, número, espacio, etc.) como un símbolo terminal diferente, pero terminaríamos con una cantidad inmanejable de símbolos no terminales y producciones, es decir con una gramática enorme. Por esa razón definimos una serie de Token Léxicos que al pasárselos a un analizador léxico transforman el texto de entrada de una serie de caracteres en una serie de tokens.
+
+\paragraph{} Definimos los tokens usando expresiones regulares. Primero definimos un token por cada tag de HTLM y por último un token para todo el texto que sobre. El analizador léxico tokeniza el archivo buscando los tokens en orden, de manera que todo el texto que halla entre dos tags queda tokenizado como \verb|texto|.
+
+\paragraph{} El caso de la sección \verb|script| de HTML nos presentó un problema: entre los tags \verb|<script>| y \verb|</script>| puede haber cualquier combinación de caracteres excepto el tag de cierre de script. Esto quiere decir que podría haber incluso otros tags HTML dentro de un script, que deberían ser ignorados y que podrían no formar HTML válido. Pensamos en un principio en tokenizar el texto interior de los scripts con el analizador léxico como \verb|texto_sin_script| para tomar todo el texto que no tenga el tag \verb|</script>| como un token. Sin embargo no es posible tokenizar el texto de esta manera, ya que no tiene sentido poner el token \verb|texto_sin_script| antes ni después de los tags de HTML. 
+Esto se debe a que si el analizador léxico busca primero el token \verb|texto_sin_script| y luego los tags, el primer token estaría ``absorviendo'' todos los tags excepto \verb|</script>| como parte de un script, incluso cuando no forman parte de un script; entonces no tokenizaría nunca los tags HTML. Si en cambio tokenizáramos primero los tags HTML y después \verb|texto_sin_script|, los tags del interior de los scripts serían reconocidos y el tag \verb|texto_sin_script| no cumpliría su función. Por esta razón decidimos tokenizar únicamente \verb|texto| para todo el texto que sobre luego de haber reconocido los tags HTML, y reconocer los tags que pueda haber en el script desde la gramática y no desde el analizador léxico.
+
+\paragraph{} Además de tokenizar, el analizador léxico también se encarga de eliminar los comentarios y los espacios en blanco consecutivos, ya que estos podrían estar en cualquier parte del archivo recibido y debemos ignorarlos por completo.
+
+\paragraph{} En la gramática definimos un símbolo no terminal $S$ para todo el documento.
+
+\paragraph{} El símbolo no terminal $H$ contiene el interior del HTML, que a su vez puede tener un $HEAD$ y un $BODY$.
+
+\paragraph{} Los símbolos $HEAD$ y $BODY$ representan las secciones head y body de HTML respectivamente, y los símbolos $HE$ y $B$ representan el interior de dichas secciones.
+
+\paragraph{} Con el símbolo $SCS$ definimos una serie de cero o más scripts, que identificamos con el símbolo $SC$. 
+
+\paragraph{} El símbolo $TSC$ representa el texto del interior de un script. Este es el símbolo con más producciones, ya que puede tener en su interior cualquier tag excepto \verb|</script>| y además estos pueden ir de cualquier manera, sin formar HTML válido.
+
+\paragraph{} El interior de la sección body lo definimos recursivamente con el símbolo $B$, entendiendo que entre cada par de tags de apertura y cierre del mismo tipo puede haber más texto HTML válido.
+
+\paragraph{} Decidimos que sólo puede haber un elemento \verb|<TITLE>...</TITLE>| dentro del head.

@@ -1,0 +1,40 @@
+\subsection{Tokens L\'exicos}
+
+\paragraph{} Los tokens l\'exicos est\'an descritos por expresiones regulares. La siguiente tabla describe para cada token su expresi\'on rgular correspondiente.
+
+
+\begin{center}
+    
+\begin{tabular}{|l|l|}
+\hline
+\emph{Token L\'exico} & \emph{Expresi\'on Regular}\\
+\hline \hline
+\verb|<HTML>| & \texttt{<html>} \\
+\verb|</HTML>| & \texttt{</html>}\\
+\verb|<HEAD>| & \texttt{<head>}\\
+\verb|</HEAD>| & \texttt{</head>}\\
+\verb|<BODY>| & \texttt{<body>}\\
+\verb|</BODY>| & \texttt{</body>}\\
+\verb|<TITLE>| & \texttt{<title>}\\
+\verb|</TITLE>| & \texttt{</title>}\\
+\verb|<SCRIPT>| & \texttt{<script>}\\
+\verb|</SCRIPT>| & \texttt{</script>}\\
+\verb|<DIV>| & \texttt{<div>}\\
+\verb|</DIV>| & \texttt{</div>}\\
+\verb|<P>| & \texttt{<p>}\\
+\verb|</P>| & \texttt{</p>}\\
+\verb|<BR>| & \texttt{<br>}\\
+\verb|texto| & \texttt{.*}\\
+\hline
+\end{tabular}
+
+\end{center}
+\paragraph{} Antes de tokenizar, el analizador l\'exico elimina espacios consecutivos y comentarios.
+Los comentarios cumplen con la expresi\'on regular \verb|<!--.*-->|
+
+\subsubsection{Correcciones Para la implementaci\'on}
+Si bien la primer versi\'on de los tokens no ten\'ia ning\'una correccion por parte del grupo docente, cambiamos la forma de tokenizar el token \verb|texto| dadas las posibilidades que nos brindaba ANTLR\footnote{www.antlr.org}. La nueva versi\'on del token qued\'o expresada como:
+
+\verb|texto| & \texttt{[$\sim$<]*}\\
+Queriendo representar cualquier caracter menos el s\'imbolo $<$
+

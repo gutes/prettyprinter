@@ -1,0 +1,53 @@
+\subsection{Gram\'atica}
+\label{sec:gramatica}
+\paragraph{} La siguiente gram\'atica define el MicroHTML:
+
+\[
+    G = <N, \Sigma, P, S>
+\]
+
+Donde:
+\begin{gather*}
+    N = \{S, H, HEAD, BODY, HE, SCS, SC, TSC, B\}\\
+    \Sigma = \{texto, <HTML>, </HTML>, <HEAD>, </HEAD>, \\
+               <TITLE>, </TITLE>, <SCRIPT>, </SCRIPT>, \\
+               <BODY>, </BODY>, <H1>, </H1>, <DIV>, </DIV>,\\
+               <P>, </P>, <BR>\}\\
+    S = S
+\end{gather*}
+
+\paragraph{} Que de acuerdo a la clasificaci\'on de Chomsky es una gram\'atica \emph{tipo 0}, o \emph{sin restricciones}. Las producciones ($P$) se detallan en la siguiente subsecci\'on.
+
+\subsection{Producciones - $P$}
+\begin{lstlisting}
+S       -> <HTML> H </HTML>
+ 
+H       -> HEAD BODY | HEAD | BODY | λ   
+
+HEAD    -> <HEAD> HE </HEAD>
+
+BODY    -> <BODY> B </BODY>
+
+HE      -> SCS <TITLE> texto </TITLE> SCS 
+
+SCS     -> SC SCS | λ
+
+SC      -> <SCRIPT> TSC </SCRIPT>
+
+TSC ->  <HTML> TSC | </HTML> TSC | 
+        <HEAD> TSC | </HEAD> TSC |
+        <BODY> TSC | </BODY> TSC |
+        <TITLE> TSC | </TITLE> TSC |
+        <DIV> TSC | </DIV> TSC |
+        <H1> TSC | </H1> TSC |
+        <P> TSC | </P> TSC |
+        <SCRIPT> TSC | <BR> TSC | texto TSC | λ
+
+B   ->  texto B |
+        <DIV> B </DIV> B |
+        <H1> B </H1> B |
+        <P> B </P> B |
+        <BR> B |
+        λ
+
+\end{lstlisting}

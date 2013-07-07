@@ -1,0 +1,158 @@
+\subsection{Arbol de derivaci\'on}
+
+\paragraph{} A continuaci\'on presentamos el \'arbol de derivaci\'on para el siguiente ejemplo:
+
+\begin{verbatim}
+<HTML>
+    <HEAD>
+        <TITLE>Una pagina de ejemplo</TITLE>
+        <SCRIPT>
+        function unaFunc(){
+            alert("esta funcion imprime un tag roto <TITLE>");
+        }
+        </SCRIPT>
+        <SCRIPT></SCRIPT>
+        <SCRIPT>alert("aca no aparece el cierre de SCRIPT")</SCRIPT>
+    </HEAD>
+    <BODY>
+        <H1>Un heading</H1>
+        <DIV>
+            <P>Este texto es de prueba</P>
+        </DIV>
+        <BR>
+        <P>Mas prueba</P>
+    </BODY>
+</HTML>
+\end{verbatim}
+
+\paragraph{} Debido al tamaño del ejemplo, el árbol de derivación tuvo que ser partido en dos partes. Nótese que del (único) nodo con el no terminal $H$ cuelgan 2 hijos con el no-terminal $HEAD$, y el no terminal $BODY$. El primer subárbol muestra los descendientes de $HEAD$ y el segundo los de $BODY$. En cada árbol, el no terminal cuyo subárbol está suprimido se encuentra marcado en rojo, y con un subárbol genérico (triangulo) simbolizando que en realidad continúa. Por ejemplo:
+
+\begin{enumerate}
+\qtreecenterfalse
+\item[] a.
+ \Tree  [.\textbf{H} 
+            [\qroof{desarrollado}.{\textbf{$HEAD$}} ]
+            [\qroof{\color{red}suprimido}.{\textbf{\color{red}$BODY$}} ] 
+        ] 
+        \hskip 0.3in
+ b.
+ \Tree  [.\textbf{H} 
+            [\qroof{\color{red}suprimido}.{\textbf{\color{red}$HEAD$}} ]
+            [\qroof{desarrollado}.{\textbf{$BODY$}} ] 
+        ]
+ \end{enumerate}
+
+En la figura \emph{a.} se suprime el subárbol corrspondiente al no terminal $BODY$ y en el \emph{b.} el correspondiente al no terminal $HEAD$. 
+
+
+\begin{landscape}
+
+\hspace*{-0.1\linewidth}\resizebox{1.1\linewidth}{!}{%
+\Tree [.S 
+        [.$<HTML>$ ] 
+        [.\textbf{H} 
+            [.HEAD 
+                [$<HEAD>$ ] 
+                [.HE 
+                     [.SCS 
+                         [.$\lambda$ ]                          
+                     ] 
+                     [.$<TITLE>$ ] 
+                     [.texto ] 
+                     [.$</TITLE>$ ] 
+                     [.SCS 
+                         [.SC
+                              [.$<SCRIPT>$ ]  
+                              [.TSC 
+                                  [.texto ] 
+                                  [.TSC 
+                                      [.$<TITLE>$ ] 
+                                      [.TSC 
+                                          [.texto ] 
+                                          [.TSC 
+                                              [.$\lambda$ ] 
+                                          ]                                          
+                                      ]   
+                                  ] 
+                              ] 
+                              [.</SCRIPT> ] 
+                         ] 
+                         [.SCS 
+                             [.SC 
+                                 [.$<SCRIPT>$ ] 
+                                 [.texto ] 
+                                 [.$</SCRIPT>$ ]
+                             ] 
+                             [.SCS 
+                                 [.SC 
+                                     [.$<SCRIPT>$ ] 
+                                     [.texto ]
+                                     [.$</SCRIPT>$ ] 
+                                 ] 
+                                 [.SCS 
+                                     [.$\lambda$ ] 
+                                 ]                                 
+                             ]
+                         ]
+                     ] 
+                ] 
+                [.$</HEAD>$ ]
+            ]
+            [\qroof{\color{red}suprimido}.{\textbf{\color{red}$BODY$}} ]
+        ]
+        [.$</HTML>$ ] 
+    ].S
+}
+
+
+\hspace*{-0.1\linewidth}\resizebox{1.1\linewidth}{!}{%
+\Tree [.S 
+        [.$<HTML>$ ] 
+        [.\textbf{H} 
+            [\qroof{\color{red}suprimido}.{\textbf{\color{red}$HEAD$}}  ]
+            [.BODY 
+                [.$<BODY>$ ] 
+                [.B 
+                    [.$<H1>$ ]
+                    [.B 
+                        [.texto ] 
+                        [.B 
+                            [.$\lambda$ ]
+                        ] 
+                    ]
+                    [.$</H1>$ ]
+                    [.B 
+                        [.$<DIV>$ ]
+                        [.B 
+                            [.$<P>$ ]
+                            [.B 
+                                [.texto ]
+                                [.B 
+                                    [.$\lambda$ ]
+                                ]
+                            ]
+                            [.$</P>$ ]
+                        ]
+                        [.$</DIV>$ ]
+                        [.B
+                            [.$<BR>$ ]
+                            [.B
+                                [.$<P>$ ]
+                                [.B 
+                                    [.texto ]
+                                    [.B 
+                                        [.$\lambda$ ]
+                                    ]
+                                ]
+                                [.$</P>$ ]
+                            ]
+                        ]
+                    ] 
+                ] 
+                [.$</BODY>$ ] 
+            ]
+        ]
+        [.$</HTML>$ ]
+    ].S
+}
+\end{landscape}

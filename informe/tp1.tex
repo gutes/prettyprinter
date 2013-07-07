@@ -1,0 +1,48 @@
+%%%%% $Id: informe.tex $ %%%%%
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caratula}
+\usepackage{listings}
+\usepackage[pdftex,bookmarks=true,bookmarksnumbered=true,linkbordercolor={0 0 1},colorlinks=true,urlcolor=rltblue,linkcolor=rltred,citecolor=rltgreen,filecolor=blue]{hyperref}
+\usepackage[pdftex]{graphicx, pdflscape}
+\usepackage{color}
+\usepackage{qtree}
+\usepackage{multirow}
+
+
+\lstset{
+  basicstyle=\itshape,
+  xleftmargin=3em,
+  literate={->}{$\rightarrow$}{2}
+           {λ}{$\lambda$}{1}
+}
+
+\begin{document}
+\newpage
+
+\materia{Teor\'ia de Lenguajes}
+\submateria{Primer cuatrimestre 2013}
+\titulo{TP Micro HTML Prettyprint}
+
+\integrante{Ezequiel Gutesman}{715/02}{egutesman@gmail.com}
+\integrante{Mauricio Alfonso}{65/09}{mauricioalfonso88@gmail.com}
+\integrante{Victor Hugo Montero}{707/98}{vico.walker@gmail.com}
+
+\maketitle
+\newpage
+\tableofcontents
+\include{intro}
+\include{tokens}
+\include{gramatica}
+\include{arbol}
+\include{implementacion}
+\include{apendice}
+
+
+
+
+\end{document}
+

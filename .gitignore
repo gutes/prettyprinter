@@ -8,3 +8,10 @@ bin
 *.class
 
 desktop.ini
+*.aux
+
+*.log
+
+*.toc
+
+*.out
