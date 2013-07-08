@@ -1,4 +1,4 @@
-// $ANTLR 3.5 C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g 2013-07-05 20:37:35
+// $ANTLR 3.5 C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g 2013-07-08 00:38:51
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -49,10 +49,10 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:116:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:116:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:111:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:111:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:116:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:111:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -104,12 +104,12 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = COMM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:120:6: ( '<!' ( . )* '>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:120:8: '<!' ( . )* '>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:115:6: ( '<!' ( . )* '>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:115:8: '<!' ( . )* '>'
 			{
 			match("<!"); 
 
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:120:13: ( . )*
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:115:13: ( . )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -123,7 +123,7 @@ public class prettyprinterLexer extends Lexer {
 
 				switch (alt2) {
 				case 1 :
-					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:120:13: .
+					// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:115:13: .
 					{
 					matchAny(); 
 					}
@@ -157,8 +157,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_HTML;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:124:31: ( '<html>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:124:33: '<html>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:119:31: ( '<html>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:119:33: '<html>'
 			{
 			match("<html>"); 
 
@@ -184,8 +184,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_HTML;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:128:33: ( '</html>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:128:35: '</html>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:123:33: ( '</html>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:123:35: '</html>'
 			{
 			match("</html>"); 
 
@@ -208,8 +208,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:132:9: ( '<head>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:132:11: '<head>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:127:9: ( '<head>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:127:11: '<head>'
 			{
 			match("<head>"); 
 
@@ -232,8 +232,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_HEAD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:136:11: ( '</head>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:136:13: '</head>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:131:11: ( '</head>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:131:13: '</head>'
 			{
 			match("</head>"); 
 
@@ -256,8 +256,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_TITLE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:140:10: ( '<title>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:140:12: '<title>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:135:10: ( '<title>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:135:12: '<title>'
 			{
 			match("<title>"); 
 
@@ -280,8 +280,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_TITLE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:144:12: ( '</title>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:144:14: '</title>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:139:12: ( '</title>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:139:14: '</title>'
 			{
 			match("</title>"); 
 
@@ -304,8 +304,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_SCRIPT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:148:11: ( '<script>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:148:13: '<script>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:143:11: ( '<script>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:143:13: '<script>'
 			{
 			match("<script>"); 
 
@@ -328,8 +328,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_SCRIPT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:152:13: ( '</script>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:152:15: '</script>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:147:13: ( '</script>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:147:15: '</script>'
 			{
 			match("</script>"); 
 
@@ -352,8 +352,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_BODY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:156:9: ( '<body>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:156:11: '<body>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:151:9: ( '<body>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:151:11: '<body>'
 			{
 			match("<body>"); 
 
@@ -376,8 +376,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_BODY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:160:11: ( '</body>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:160:13: '</body>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:155:11: ( '</body>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:155:13: '</body>'
 			{
 			match("</body>"); 
 
@@ -400,8 +400,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_H1;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:164:7: ( '<h1>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:164:9: '<h1>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:159:7: ( '<h1>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:159:9: '<h1>'
 			{
 			match("<h1>"); 
 
@@ -424,8 +424,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_H1;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:168:9: ( '</h1>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:168:11: '</h1>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:163:9: ( '</h1>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:163:11: '</h1>'
 			{
 			match("</h1>"); 
 
@@ -448,8 +448,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_DIV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:172:8: ( '<div>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:172:10: '<div>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:167:8: ( '<div>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:167:10: '<div>'
 			{
 			match("<div>"); 
 
@@ -472,8 +472,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_DIV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:176:10: ( '</div>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:176:12: '</div>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:171:10: ( '</div>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:171:12: '</div>'
 			{
 			match("</div>"); 
 
@@ -496,8 +496,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_P;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:180:6: ( '<p>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:180:8: '<p>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:175:6: ( '<p>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:175:8: '<p>'
 			{
 			match("<p>"); 
 
@@ -520,8 +520,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_C_P;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:184:8: ( '</p>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:184:10: '</p>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:179:8: ( '</p>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:179:10: '</p>'
 			{
 			match("</p>"); 
 
@@ -544,8 +544,8 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_BR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:188:7: ( '<br>' )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:188:9: '<br>'
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:183:7: ( '<br>' )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:183:9: '<br>'
 			{
 			match("<br>"); 
 
@@ -568,10 +568,10 @@ public class prettyprinterLexer extends Lexer {
 		try {
 			int _type = TK_TEXTO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:192:10: ( (~ ( '<' ) )+ )
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:192:12: (~ ( '<' ) )+
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:187:10: ( (~ ( '<' ) )+ )
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:187:12: (~ ( '<' ) )+
 			{
-			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:192:12: (~ ( '<' ) )+
+			// C:\\Users\\Mauricio\\Documents\\GitHub\\prettyprinter\\src\\prettyprinter.g:187:12: (~ ( '<' ) )+
 			int cnt3=0;
 			loop3:
 			while (true) {

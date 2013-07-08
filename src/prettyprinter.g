@@ -8,13 +8,8 @@ options {
 
 /* *********** PRODUCCIONES *********** */
 
-//  TODO leer de stdin
-//  TODO no acepta el signo < en los scripts, excepto que sean tags  
-//    (ejemplo: if (x < 5) en un script no parsea) porque TK_TEXTO es todo menos '<' 
-//  TODO pinta los tags en scripts y no debería (porque los span están en los tokens; se podría corregir)
-
 s returns [String texto]
-  : t1=TK_HTML h1=h t2=TK_C_HTML {
+  : t1=TK_HTML h1=h t2=TK_C_HTML EOF {
       $texto = 
           "<html><head>" + 
           "<style type=\"text/css\">" + 

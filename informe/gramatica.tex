@@ -51,3 +51,18 @@ B   ->  texto B |
         λ
 
 \end{lstlisting}
+
+
+\subsubsection{Correcciones Para la implementaci\'on}
+
+Debido a que ANTLR es un generador de parsers tipo LL(K) extendido, las producciones del símbolo no terminal H debieron ser cambiadas. En la gramática original dos de las producciones de H tienen el terminal \texttt{<HEAD>} como símbolo directriz, lo cual no está permitido en parsers LL. Las producciones de H fueron reemplazadas por una sola usando expresiones regulares de la siguiente manera:
+
+\begin{lstlisting}
+H       -> HEAD ? BODY ?
+\end{lstlisting}
+
+Por otra parte, para evitar que ANTLR reconozca cadenas inválidas formadas por HTML válido seguido de otros caracteres (por ejemplo \\ \texttt{<html></html>aaa}), fue necesario agregar el símbolo de fin de archivo (EOF en ANTLR) a la producción del símbolo distinguido S, quedando de la siguiente manera:
+
+\begin{lstlisting}
+S       -> <HTML> H </HTML> $
+\end{lstlisting}

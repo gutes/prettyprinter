@@ -12,7 +12,7 @@ public class Test {
 		System.out.println("=======================");
 		parseString(html3_invalid);
 		System.out.println("=======================");
-		parseString(html3_invalid);
+		parseString(html4_invalid);
 	}
 	
 	

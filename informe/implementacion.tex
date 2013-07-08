@@ -6,10 +6,10 @@ Se pidió en esta segunda parte implementar un parser que parsee texto según la
 Por ejemplo, para la siguiente entrada:
 
       \begin{verbatim}
-<html><head><title>Título</title><script>print("hello")</script>\n
-</head><body>\ntexto<p>párrafo<h1><!--comentario--><p> más texto
-</p></h1></p>\n <div>texto texto texto <br> mas texto texto texto
-</div>\n\n</body>\n</html>\n\end{verbatim}
+<html><head><title>Título</title><script>print("hello")</script>
+</head><body>texto<p>párrafo<h1><!--comentario--><p> más texto
+</p></h1></p> <div>texto texto texto <br> mas texto texto texto
+</div> </body> </html>\end{verbatim}
 
 Se producirá la siguiente salida en un archivo HTML:
 
@@ -21,9 +21,9 @@ Se producirá la siguiente salida en un archivo HTML:
 
 \newpage
 \subsubsection{Detalles de implementación y limitaciones}
-La solución fue desarrollada con ANTLR\footnote{www.antlr.org} y tanto el lexer como el parser generado fueron generados en Java.
+La solución fue desarrollada con ANTLR\footnote{www.antlr.org} y tanto el lexer como el parser fueron generados en Java.
 
-El parser no acepta el símbolo \verb|<| dentro de un tag script, podría tokenizarse mejor ya que una comparación dentro del script haría que falle el parsing.
+El parser no acepta el símbolo \verb|<| dentro de un tag script. Esto podría tokenizarse mejor ya que una comparación dentro del script haría que falle el parsing.
 
 En cuanto a la salida del parsing, esta es calculada en un atributo \textbf{sintetizado} llamado \texttt{texto}. Para manejar la indentación, utilizamos un único tag \verb|<div class="bloque">| cuyo único estilo tiene un margen a izquierda, fijo. El efecto de ir generando estos divs a medida que se necesita generar un tag produce la indentación deseada, contemplando el nivel de encadenamiento de tags producto de ir procesando un tag dentro de otro.
 
@@ -33,34 +33,36 @@ En cuanto al coloreo de los tags, cada tag reconocido tiene su correspondiente c
 
 \underline{Entrada 1:}
 \begin{verbatim}
-<html><head><title>Título</title><script>print("hello")</script>\n
-</head><body>\ntexto<p>párrafo<h1><!--comentario--><p> más texto
-</p></h1></p>\n <div>texto texto texto <br> mas texto texto texto
-</div>\n\n</body>\n</html>\n\end{verbatim}
+<html><head><title>Título</title><script>print("hello")</script>
+</head><body>texto<p>párrafo<h1><!--comentario--><p> más texto
+</p></h1></p> <div>texto texto texto <br> mas texto texto texto
+</div> </body> </html>\end{verbatim}
 
 \underline{Salida 1:}
 
 \begin{figure}[h!]
-\includegraphics[width=4.8cm]{img/ejemplo1.png}
+\includegraphics[width=4.7cm]{img/ejemplo1.png}
       \caption{Salida para un ejemplo válido.}
       \label{salida1}
 \end{figure}
+
+\newpage
 
 \underline{Entrada 2:}
 
 \begin{verbatim}
 <html>  <head> <script>print("a script")</script><title>Título</title>
- <script>print("hello")</script><script>print("world")</script>\n
-</head><body>\ntexto suelto<p>párrafo <h1><!-- comentario--><p> más texto</p></h1>
-</p>\n<div>texto texto texto <br> mas texto textotexto</div>\n<div>
+ <script>print("hello")</script><script>print("world")</script>
+</head><body>texto suelto<p>párrafo <h1><!-- comentario--><p> más texto</p></h1>
+</p><div>texto texto texto <br> mas texto textotexto</div><div>
 Un Div que adentro tiene otro<div>Dentro <div><p>de otro</p> con mas texto
-</div></div></div>\n</body>\n</html>\n
+</div></div></div>  </body>  </html>
 \end{verbatim}
 
 \underline{Salida 2:}
 
 \begin{figure}[h!]
-\includegraphics[width=4.8cm]{img/ejemplo2.png}
+\includegraphics[width=6.2cm]{img/ejemplo2.png}
       \caption{Salida para un ejemplo válido.}
       \label{salida2}
 \end{figure}
@@ -72,10 +74,10 @@ Un Div que adentro tiene otro<div>Dentro <div><p>de otro</p> con mas texto
 \underline{Entrada 3 (\texttt{<title>} sin abrir):}
 \begin{verbatim}
 <html>  Título</title> <script>print("hello")</script><script>print("world")
-</script>\n</head><body>\ntexto suelto<p>párrafo <h1><!-- comentario--><p> 
-más texto</p></h1></p>\n<div>texto texto texto <br> mas texto texto texto
-</div>\n<div>Un Div que adentro tiene otro<div>Dentro <div><p>de otro
-</p> con mas texto</div></div></div>\n</body>\n</html>\n
+</script></head><body>texto suelto<p>párrafo <h1><!-- comentario--><p> 
+más texto</p></h1></p><div>texto texto texto <br> mas texto texto texto
+</div><div>Un Div que adentro tiene otro<div>Dentro <div><p>de otro
+</p> con mas texto</div></div></div></body></html>
 	\end{verbatim}
     
 \underline{Salida 3:}
@@ -85,11 +87,11 @@ más texto</p></h1></p>\n<div>texto texto texto <br> mas texto texto texto
 \\\\
 \begin{verbatim}
 <html>  <head> <script>print("a script")</script><title>Título</title>
-<script>print("hello")</script><script>print("world")</script>\n
-</head><body>\ntexto suelto<p>párrafo <h1><!-- comentario--><p> 
-más texto</p></h1></p>\n<div>texto texto texto <br> mas texto texto 
-texto\n<div>Un Div que adentro tiene otro<div>Dentro <div><p>de otro</p> 
-con mas texto</div></div></div>\n</body>\n</html>\n
+<script>print("hello")</script><script>print("world")</script>
+</head><body>texto suelto<p>párrafo <h1><!-- comentario--><p> 
+más texto</p></h1></p><div>texto texto texto <br> mas texto texto 
+texto<div>Un Div que adentro tiene otro<div>Dentro <div><p>de otro</p> 
+con mas texto</div></div></div></body></html>
 \end{verbatim}
 
 \underline{Salida 4:}\\\\

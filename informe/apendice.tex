@@ -13,7 +13,7 @@ options {
 /* *********** PRODUCCIONES *********** */
 
 s returns [String texto]
-  : t1=TK_HTML h1=h t2=TK_C_HTML {
+  : t1=TK_HTML h1=h t2=TK_C_HTML EOF {
       $texto = 
           "<html><head>" + 
           "<style type=\"text/css\">" + 
@@ -189,5 +189,6 @@ TK_BR : '<br>' {
 };
 
 TK_TEXTO : (~('<'))+;  //todo menos <
+
 \end{verbatim}
 }

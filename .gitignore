@@ -8,6 +8,7 @@ bin
 *.class
 
 desktop.ini
+
 *.aux
 
 *.log
@@ -21,3 +22,9 @@ desktop.ini
 informe/tp1.pdf
 
 ejemplo.html
+
+*.tex~
+
+*.toc~
+
+*.backup
