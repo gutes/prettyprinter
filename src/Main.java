@@ -8,9 +8,9 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		String line, string = "";
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-		while((line = input.readLine()) != null) string += line;
+		while((line = input.readLine()) != null) string += line + '\n';
 		
-		System.out.println(new prettyprinterParser(new CommonTokenStream(new prettyprinterLexer(
-				new ANTLRStringStream(string)))).s().texto);
+		System.out.println(new prettyprinterParser(new CommonTokenStream(
+			new prettyprinterLexer(new ANTLRStringStream(string)))).s().texto);
 	 }
 }

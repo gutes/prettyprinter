@@ -2,20 +2,13 @@ import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CommonTokenStream;
 
 public class Test {	
-	private String[] testCases = {html1_valid, html2_valid}; 
-	
 	
 	public static void main(String[] args) throws Exception {
-		parseString(html1_valid);
-		System.out.println("=======================");
-		parseString(html2_valid);
-		System.out.println("=======================");
-		parseString(html3_invalid);
-		System.out.println("=======================");
-		parseString(html4_invalid);
+		for (String test : testCases) {
+			parseString(test);
+			System.out.println("=======================");
+		}
 	}
-	
-	
 	
 	public static void parseString(String s) throws Exception{	 
 		ANTLRStringStream in = new ANTLRStringStream(s);
@@ -57,5 +50,21 @@ public class Test {
 			"<div>texto texto texto <br> mas texto texto      texto\n" +
 			"<div>Un Div que adentro tiene otro<div>Dentro <div><p>de otro</p> con mas texto</div></div></div>"+
 			"\n" +"</body>\n</html>\n";
+	
+	static String html5_invalid = 
+		"<html><head><ti" + "\n" +
+		"tle>esto es un título</title></head></html>";
+	
+	static String html6_invalid = 
+		"<html><head><title></head></html>";
+	
+	private static String[] testCases = {
+//		html1_valid, 
+//		html2_valid, 
+//		html3_invalid, 
+//		html4_invalid, 
+		html5_invalid, 
+//		html6_invalid,
+	};
 	
 }
