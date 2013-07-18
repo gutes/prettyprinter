@@ -1,5 +1,6 @@
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
 
 public class Test {	
 	
@@ -10,12 +11,28 @@ public class Test {
 		}
 	}
 	
-	public static void parseString(String s) throws Exception{	 
+	public static void parseString(String s) throws RecognitionException {	 
 		ANTLRStringStream in = new ANTLRStringStream(s);
-		prettyprinterLexer lexer = new prettyprinterLexer(in);
+		prettyprinterLexer lexer = new prettyprinterLexer(in) {
+			@Override
+			public void reportError(RecognitionException e) {
+				super.reportError(e);
+				throw new RuntimeException();
+			}
+		};
+		
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		prettyprinterParser parser = new prettyprinterParser(tokens);
-		System.out.println(parser.s().texto);
+		prettyprinterParser parser = new prettyprinterParser(tokens) {
+			@Override
+			public void reportError(RecognitionException e) {
+				super.reportError(e);
+				throw new RuntimeException();
+			}
+		};
+		
+		try {
+			System.out.println(parser.s().texto);
+		} catch (RuntimeException e) {}
 	}
 	
 	static String html1_valid = 
@@ -56,15 +73,15 @@ public class Test {
 		"tle>esto es un título</title></head></html>";
 	
 	static String html6_invalid = 
-		"<html><head><title></head></html>";
+		"<html>texto</html>";
 	
 	private static String[] testCases = {
-//		html1_valid, 
-//		html2_valid, 
-//		html3_invalid, 
-//		html4_invalid, 
+		html1_valid, 
+		html2_valid, 
+		html3_invalid, 
+		html4_invalid, 
 		html5_invalid, 
-//		html6_invalid,
+		html6_invalid,
 	};
 	
 }
