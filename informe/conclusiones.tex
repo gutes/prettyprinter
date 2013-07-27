@@ -1,0 +1,18 @@
+\subsection{Conclusiones}
+\paragraph{}El problema que el presente trabajo resuelve sirvi\'o como caso de estudio para el desarrollo, en la primera etapa, de una gram\'atica \emph{sin restricciones} (seg\'un la clasificaci\'on de Chomsky). En esa primera etapa tuvimos que tomar decisiones sobre c\'omo tokenizar la versi
+\'on reducida del lenguaje HTML para poder generar, dada una cadena de texto, la versi\'on correctamente coloreada e indentada, siempre y cuando esta formaba una entrada HTML v\'alida.
+
+\paragraph{}La primer parte del trabajo no present\'o mayores dificultades mas all\'a de la toma de decisiones referentes a qu\'e parte del parsing ser\'ia manejado con producciones en la gram\'atica y cuales con la tokenizaci\'on. 
+
+\paragraph{}En una segunda parte desarrollamos una implementaci\'on en el lenguaje Java, utilizando el generador de parsers \emph{ANTLR}. La gram\'atica desarrollada no ten\'ia problemas estructurales (por ejemplo, no presentaba recursi\'on a izquierda) por lo tanto procedimos a la sintetizaci\'on de atributos dentro de \emph{ANTRL}. Luego de una primera entrega, se reportaron errores atribu\'idos principalmente a dos problemas dentro de la implementaci\'on:
+
+\begin{enumerate}
+    \item La salida del parsing era emitida como salida a medida que se sintetizaban los atributos y se parseaba la entrada, esto produjo que para entradas inv\'alidas haya una salida parcial, interrumpida en el momento de emitir un error. 
+    \item Permitir saltos de l\'inea dentro de los tags HTML procesaba como v\'alidos aquellas cadenas de texto donde los tags estaban separados entre 2 o m\'as lineas. 
+\end{enumerate}
+
+\paragraph{}Ambos errores fueron corregidos y la implementaci\'on entregada no posee estos problemas.
+
+\paragraph{}En cuanto a \emph{ANTLR} result\'o ser basntante intuitiva la manera en la que se sintetizan atributos a medida que se realiza el parsing de la entrada. El uso del lenguaje Java dentro de los bloques de c\'odigo donde se realiza la sintetizaci\'on otorgan una felixibilidad notable que imaginamos facilita el desarrollo de parsers de mayor complejidad.
+
+\paragraph{}Hubiera sido interesante comparar una implementaci\'on del mismo parser en tecnolog\'ias como \emph{Bison}\footnote{http://www.gnu.org/software/bison/} o \emph{Lex, YACC}\footnotesize{http://dinosaur.compilertools.net/}. Principalmente porque estos generan parsers LALR a diferencia de \emph{ANTLR} que genera parsers LL(*). Podríamos haber tomado otras decisiones en la gram\'atica y analizar su impacto en la performance de los parsers. Por ejemplo, una gram\'atica recursiva a izquierda no habr\'ia sido soportada por \emph{ANTLR} pero s\'i por \emph{YACC} y \emph{Bison}. Este tipo de comparaci\'on comprende un trabajo mayor tanto en la escritura de las gram\'aticas como en las implementaciones.
