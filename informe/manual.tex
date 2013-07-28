@@ -1,0 +1,22 @@
+\subsection{Manual de Uso}
+
+\subsubsection{Compilación}
+Desde la carpeta \texttt{prettyprinter}, (sin entrar a \texttt{src} ni \texttt{bin}) se puede compilar el programa con el comando:\\
+
+  \texttt{javac -cp bin/antlrworks-1.5.jar -sourcepath src/ -d bin/ src/Main.java }\\
+
+El archivo \texttt{antlrworks-1.5.jar} debe estar previamente en la carpeta \texttt{bin}.
+
+\subsubsection{Uso}
+
+Dado que el programa lee de la entrada estándar, no necesita parámetros adicionales. Desde la carpeta \texttt{prettyprinter} se puede correr con el comando:\\
+
+  \texttt{java -cp bin:bin/antlrworks-1.5.jar Main}\\
+
+
+Para leer desde archivos e imprimir en otro archivo en vez de la consola, se pueden usar \texttt{<} y \texttt{>} para pasar archivos, de la siguiente manera:\\
+
+  \texttt{java -cp bin:bin/antlrworks-1.5.jar Main < ARCHIVO\_DE\_ENTRADA.html > ARCHIVO\_DE\_SALIDA.html}\\
+
+
+

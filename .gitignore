@@ -3,8 +3,6 @@
 
 .project
 
-bin
-
 *.class
 
 desktop.ini
@@ -16,10 +14,6 @@ desktop.ini
 *.toc
 
 *.out
-
-*.pdf
-
-informe/tp1.pdf
 
 ejemplo.html
 
